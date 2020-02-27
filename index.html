@@ -10,140 +10,136 @@
         <h1>Processing project by Antonio</h1>
         <script type="text/processing">
            
-int ray=0;
-int ray2=0;
-int ray3=0;
-int ray4=0;
-int ray5=0;
+        int ray=0;
+        int ray2=0;
+        int ray3=0;
+        int ray4=0;
+        int ray5=0;
 
-void setup() {
-  size(640, 360);
-  stroke(255);
-  frameRate(10);
-} 
+        void setup() {
+          size(640, 360);
+          stroke(255);
+          frameRate(10);
+        } 
 
-  float rand1_R = random(0,255);
-  float rand1_G = random(0,255);
-  float rand1_B = random(0,255);
+        float rand1_R = random(0,255);
+        float rand1_G = random(0,255);
+        float rand1_B = random(0,255);
+
+        float rand2_R = random(0,255);
+        float rand2_G = random(0,255);
+        float rand2_B = random(0,255);  
+
+        float rand3_R = random(0,255);
+        float rand3_G = random(0,255);
+        float rand3_B = random(0,255);   
+
+        float rand4_R = random(0,255);
+        float rand4_G = random(0,255);
+        float rand4_B = random(0,255);  
   
-  float rand2_R = random(0,255);
-  float rand2_G = random(0,255);
-  float rand2_B = random(0,255);  
-  
-  float rand3_R = random(0,255);
-  float rand3_G = random(0,255);
-  float rand3_B = random(0,255);   
-  
-  float rand4_R = random(0,255);
-  float rand4_G = random(0,255);
-  float rand4_B = random(0,255);  
-  
-  float rand5_R = random(0,255);
-  float rand5_G = random(0,255);
-  float rand5_B = random(0,255);  
-  
-void draw() {
-  background(0);
+        float rand5_R = random(0,255);
+        float rand5_G = random(0,255);
+        float rand5_B = random(0,255);  
+
+        void draw() {
+        background(0);
 
 
-  if(ray > 200)
-     {
-     ray = 0;
-     rand1_R = random(0,255);
-     rand1_G = random(0,255);
-     rand1_B = random(0,255);
-     }
-  else
-     ray = ray + 5;
-   
+        if(ray > 200){
+         ray = 0;
+         rand1_R = random(0,255);
+         rand1_G = random(0,255);
+         rand1_B = random(0,255);
+         }
+        else
+         ray = ray + 5;
+
   
-  if(ray2 > 200)
-     {
-     ray2 = 0;
-     rand2_R = random(0,255);
-     rand2_G = random(0,255);
-     rand2_B = random(0,255);
-     }
-  else
-     ray2 = ray2 + 3;
+        if(ray2 > 200){
+         ray2 = 0;
+         rand2_R = random(0,255);
+         rand2_G = random(0,255);
+         rand2_B = random(0,255);
+         }
+        else
+         ray2 = ray2 + 3;
      
   
-    if(ray3 > 250) 
-     {
-     ray3 = 0;
-     rand3_R = random(0,255);
-     rand3_G = random(0,255);
-     rand3_B = random(0,255);
-     }
-  else
-     ray3 = ray3 + 6;
- 
-  if(ray4 > 250)  {
-     ray4 = 0;
-     rand4_R = random(0,255);
-     rand4_G = random(0,255);
-     rand4_B = random(0,255);
-     }
-  else
-     ray4 = ray4 + 2;  
- 
-   
- 
-   if(ray5 > 250) {
-     ray5 = 0;
-     rand5_R = random(0,255);
-     rand5_G = random(0,255);
-     rand5_B = random(0,255);
-     }
-  else
-     ray5 = ray5 + 8;  
-     
-    float centerX = width / 2;
-    float centerY = height / 2;
-     
-    // ellipse 1
-    pushMatrix();
-    translate(centerX, centerY);
-    rotate(radians(frameCount *1));
-    fill(rand1_R,rand1_G,rand1_B);
-    ellipse(ray, ray, ray, ray);
-    popMatrix();
+        if(ray3 > 250) 
+         {
+         ray3 = 0;
+         rand3_R = random(0,255);
+         rand3_G = random(0,255);
+         rand3_B = random(0,255);
+         }
+        else
+         ray3 = ray3 + 6;
+
+        if(ray4 > 250)  {
+         ray4 = 0;
+         rand4_R = random(0,255);
+         rand4_G = random(0,255);
+         rand4_B = random(0,255);
+         }
+        else
+         ray4 = ray4 + 2;  
+
+        if(ray5 > 250) {
+         ray5 = 0;
+         rand5_R = random(0,255);
+         rand5_G = random(0,255);
+         rand5_B = random(0,255);
+         }
+       else
+         ray5 = ray5 + 8;  
+
+        float centerX = width / 2;
+        float centerY = height / 2;
+
+        // ellipse 1
+        pushMatrix();
+        translate(centerX, centerY);
+        rotate(radians(frameCount *1));
+        fill(rand1_R,rand1_G,rand1_B);
+        ellipse(ray, ray, ray, ray);
+        popMatrix();
+
+        // ellipse 2
+        pushMatrix();
+        translate(centerX, centerY);
+        rotate(radians(frameCount *20));
+        fill(rand2_R,rand2_G,rand2_B);
+        ellipse(ray2, ray2, ray2, ray2);
+        popMatrix();
+
+
+        // ellipse 3
+        pushMatrix();
+        translate(centerX, centerY);
+        rotate(-radians(frameCount *5));
+        fill(rand3_R,rand3_G,rand3_B);
+        ellipse(ray2+ray3, ray2+ray3, ray3,ray3);
+        popMatrix();
+
+        // ellipse 4
+        pushMatrix();
+        translate(centerX, centerY);
+        rotate(-radians(frameCount *20));
+        fill(rand4_R,rand4_G,rand4_B);
+        ellipse(ray4, ray4, ray4,ray4);
+        popMatrix();
+
+
+        // ellipse 5
+        pushMatrix();
+        translate(centerX, centerY);
+        rotate(-radians(frameCount *1));
+        fill(rand5_R,rand5_G,rand5_B);
+        ellipse(ray5, ray5, ray5,ray5);
+        popMatrix();
     
-    // ellipse 2
-    pushMatrix();
-    translate(centerX, centerY);
-    rotate(radians(frameCount *20));
-    fill(rand2_R,rand2_G,rand2_B);
-    ellipse(ray2, ray2, ray2, ray2);
-    popMatrix();
-    
-    
-    // ellipse 3
-    pushMatrix();
-    translate(centerX, centerY);
-    rotate(-radians(frameCount *5));
-    fill(rand3_R,rand3_G,rand3_B);
-    ellipse(ray2+ray3, ray2+ray3, ray3,ray3);
-    popMatrix();
-   
-    // ellipse 4
-    pushMatrix();
-    translate(centerX, centerY);
-    rotate(-radians(frameCount *20));
-    fill(rand4_R,rand4_G,rand4_B);
-    ellipse(ray4, ray4, ray4,ray4);
-    popMatrix();
-    
-     
-    // ellipse 5
-    pushMatrix();
-    translate(centerX, centerY);
-    rotate(-radians(frameCount *1));
-    fill(rand5_R,rand5_G,rand5_B);
-    ellipse(ray5, ray5, ray5,ray5);
-    popMatrix();
-    
-}
+        }
             
         </script>
         <canvas></canvas>
